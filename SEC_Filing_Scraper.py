@@ -103,8 +103,10 @@ ReportForm = st.sidebar.radio("Pick a reporting Form", options=ReportForm)
 if x_ax != "" and ReportForm != "":
   st.write(f'\n The company choosen is {Name_company} and it has {len10K} 10-K forms and {len10Q} 10-Q forms filled registered in EDGAR')
 
-
-#st.plotly_chart(x= Assets10K[end], y= Assets10K[val])
-  
+  if ReportForm == "10-K":
+    df = px.Assets10K
+    fig = px.line(df, x='end', y="val")
+    fig.show()
+    
 
 
