@@ -9,6 +9,10 @@
 # Importing modules
 import pandas as pd
 import requests
+import streamlit as st
+import plotly.express as px
+
+st.title('Example of SEC Screaning for Tegus Recuitment Process')
 
 # Creating request Header
 headers = {'User-Agent': "fabian.fernandez@pucp.pe"}
@@ -74,3 +78,5 @@ NetIncomeLoss10Q = NetIncomeLoss10Q.reset_index(drop=True)
 
 # plot 
 Assets10Q.plot(x='end', y='val')
+
+
