@@ -96,10 +96,10 @@ ReportForm = st.sidebar.radio("Pick a reporting Form", options=ReportForm)
 if x_ax != "" and ReportForm != "":
   st.write(f'\n The company choosen is {Name_company} and it has {len10K} 10-K forms and {len10Q} 10-Q forms filled registered in EDGAR')
 
-  if ReportForm == "10-K":
-    df = px.data.stocks()
-    fig = px.line(Assets10K, x='end', y="val")
-    fig.show()
+
+df = px.data.stocks()
+fig = px.line(Assets10K, x='end', y="val")
+fig.show()
 
   if ReportForm == "10-Q":
     df = px.data.stocks()
