@@ -76,8 +76,8 @@ NetIncomeLoss = pd.DataFrame.from_dict(companyFacts.json()['facts']['us-gaap']['
 Assets10Q = Assets[Assets.form == '10-Q']
 Assets10Q = Assets10Q.reset_index(drop=True)
 
-Revenues10Q = Revenues[Revenues.form == '10-Q']
-Revenues10Q = Revenues10Q.reset_index(drop=True)
+#Revenues10Q = Revenues[Revenues.form == '10-Q']
+#Revenues10Q = Revenues10Q.reset_index(drop=True)
 
 NetIncomeLoss10Q = NetIncomeLoss[NetIncomeLoss.form == '10-Q']
 NetIncomeLoss10Q = NetIncomeLoss10Q.reset_index(drop=True)
@@ -86,8 +86,8 @@ NetIncomeLoss10Q = NetIncomeLoss10Q.reset_index(drop=True)
 Assets10K = Assets[Assets.form == '10-K']
 Assets10K = Assets10Q.reset_index(drop=True)
 
-Revenues10K = Revenues[Revenues.form == '10-K']
-Revenues10K = Revenues10Q.reset_index(drop=True)
+#Revenues10K = Revenues[Revenues.form == '10-K']
+#Revenues10K = Revenues10Q.reset_index(drop=True)
 
 NetIncomeLoss10K = NetIncomeLoss[NetIncomeLoss.form == '10-K']
 NetIncomeLoss10K = NetIncomeLoss10Q.reset_index(drop=True)
