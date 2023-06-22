@@ -10,7 +10,7 @@
 import pandas as pd
 import requests
 import streamlit as st
-import plotly_express as px
+import plotly as px
 
 st.title('Example of SEC Screaning for Tegus Recruitment Process')
 st.write('by Fabian Fernandez')
