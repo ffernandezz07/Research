@@ -11,7 +11,7 @@ import pandas as pd
 import requests
 import streamlit as st
 
-st.title('Example of SEC Screaning for Tegus Recuitment Process')
+st.title('Example of SEC Screaning for Tegus Recuitment Process - Fabian Fernandez')
 
 # Creating request Header
 headers = {'User-Agent': "fabian.fernandez@pucp.pe"}
