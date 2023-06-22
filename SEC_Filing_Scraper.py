@@ -99,7 +99,8 @@ if x_ax != "" and ReportForm != "":
 
 df = px.data.stocks()
 fig = px.line(Assets10K, x='end', y="val")
-fig.show()
+st.plotly_chart(fig, use_container_width=False, sharing="streamlit", theme="streamlit")
+
 
 #  if ReportForm == "10-Q":
 #    df = px.data.stocks()
