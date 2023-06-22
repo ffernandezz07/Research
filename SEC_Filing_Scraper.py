@@ -80,10 +80,10 @@ NetIncomeLoss10Q = NetIncomeLoss10Q.reset_index(drop=True)
 
 # get assets from 10K forms and reset index
 Assets10K = Assets[Assets.form == '10-K']
-Assets10K = Assets10Q.reset_index(drop=True)
+Assets10K = Assets10K.reset_index(drop=True)
 
 NetIncomeLoss10K = NetIncomeLoss[NetIncomeLoss.form == '10-K']
-NetIncomeLoss10K = NetIncomeLoss10Q.reset_index(drop=True)
+NetIncomeLoss10K = NetIncomeLoss10K.reset_index(drop=True)
 
 ###############################################################################
 # Using StreamLit
@@ -96,15 +96,15 @@ ReportForm = st.sidebar.radio("Pick a reporting Form", options=ReportForm)
 if x_ax != "" and ReportForm != "":
   st.write(f'\n The company choosen is {Name_company} and it has {len10K} 10-K forms and {len10Q} 10-Q forms filled registered in EDGAR')
 
-
-df = px.data.stocks()
-fig1 = px.line(Assets10K, x='end', y="val", labels={'end':'date','val':'us dollars'},title="Company Assets")
-fig1.update_layout(title_x=0.5)
-st.plotly_chart(fig1, use_container_width=False, sharing="streamlit", theme="streamlit")
-
-fig2 = px.line(NetIncomeLoss10K, x='end', y="val", labels={'end':'date','val':'us dollars'},title="Company Net Income")
-fig2.update_layout(title_x=0.5)
-st.plotly_chart(fig2, use_container_width=False, sharing="streamlit", theme="streamlit")
+  if ReportForm == "10-K":
+    df = px.data.stocks()
+    fig1 = px.line(Assets10K, x='end', y="val", labels={'end':'date','val':'us dollars'},title="Company Assets")
+    fig1.update_layout(title_x=0.5)
+    st.plotly_chart(fig1, use_container_width=False, sharing="streamlit", theme="streamlit")
+    
+    fig2 = px.line(NetIncomeLoss10K, x='end', y="val", labels={'end':'date','val':'us dollars'},title="Company Net Income")
+    fig2.update_layout(title_x=0.5)
+    st.plotly_chart(fig2, use_container_width=False, sharing="streamlit", theme="streamlit")
 
 #  if ReportForm == "10-Q":
 #    df = px.data.stocks()
