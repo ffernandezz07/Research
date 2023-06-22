@@ -98,7 +98,7 @@ if x_ax != "" and ReportForm != "":
 
 
 df = px.data.stocks()
-fig = px.line(Assets10K, x='end', y="val")
+fig = px.line(Assets10K, x='end', y="val", labels={'end':'date','val':'us dollars'})
 st.plotly_chart(fig, use_container_width=False, sharing="streamlit", theme="streamlit")
 
 
