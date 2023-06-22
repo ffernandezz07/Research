@@ -13,7 +13,6 @@ import streamlit as st
 
 st.title('Example of SEC Screaning for Tegus Recruitment Process')
 st.write('by Fabian Fernandez')
-st.write('\n by Fabian Fernandez')
 
 
 # Creating request Header
@@ -100,7 +99,7 @@ x_ax = st.sidebar.selectbox("Pick the ticker of the stock to screen", options=x_
 ReportForm = st.sidebar.radio("Pick a reporting Form", options=ReportForm)
 
 if x_ax != "" and ReportForm != "":
-  st.write('\n The stock choosen is {Name_company} and it has ')
+  st.write(f'\n The stock choosen is {Name_company} and it has ')
   
 
 
