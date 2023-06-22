@@ -13,7 +13,7 @@ import streamlit as st
 
 st.title('Example of SEC Screaning for Tegus Recruitment Process')
 st.write('by Fabian Fernandez')
-st.write('"\n"by Fabian Fernandez')
+st.write('\n by Fabian Fernandez')
 
 
 # Creating request Header
@@ -78,6 +78,16 @@ Revenues10Q = Revenues10Q.reset_index(drop=True)
 NetIncomeLoss10Q = NetIncomeLoss[NetIncomeLoss.form == '10-Q']
 NetIncomeLoss10Q = NetIncomeLoss10Q.reset_index(drop=True)
 
+# get assets from 10K forms and reset index
+Assets10K = Assets[Assets.form == '10-K']
+Assets10K = Assets10Q.reset_index(drop=True)
+
+Revenues10K = Revenues[Revenues.form == '10-K']
+Revenues10K = Revenues10Q.reset_index(drop=True)
+
+NetIncomeLoss10K = NetIncomeLoss[NetIncomeLoss.form == '10-K']
+NetIncomeLoss10K = NetIncomeLoss10Q.reset_index(drop=True)
+
 ###############################################################################
 # Using StreamLit
 ###############################################################################
@@ -87,4 +97,6 @@ ReportForm = ['10-Q','10-K']
 
 x_ax = st.sidebar.selectbox("Pick the ticker of the stock to screen", options=x_names)
 ReportForm = st.sidebar.radio("Pick a reporting Form", options=ReportForm)
+
+
 
