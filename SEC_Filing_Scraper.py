@@ -51,7 +51,8 @@ allForms = pd.DataFrame.from_dict(filingMetaData.json()['filings']['recent'])
 #Filtering by the list of values of the company
 Forms10K = allForms[allForms['form'] == '10-K']
 Forms10Q = allForms[allForms['form'] == '10-Q']
-        
+len10K = len(Forms10K)
+len10Q = len(Forms10Q)
 
 ###############################################################################
 # Obtaining Company facts data
@@ -99,7 +100,7 @@ x_ax = st.sidebar.selectbox("Pick the ticker of the stock to screen", options=x_
 ReportForm = st.sidebar.radio("Pick a reporting Form", options=ReportForm)
 
 if x_ax != "" and ReportForm != "":
-  st.write(f'\n The stock choosen is {Name_company} and it has ')
+  st.write(f'\n The stock choosen is {Name_company} and it has {len10K} 10-K forms and {len10Q} forms filled')
   
 
 
