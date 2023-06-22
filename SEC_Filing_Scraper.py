@@ -11,7 +11,7 @@ import pandas as pd
 import requests
 import streamlit as st
 
-st.title('Example of SEC Screaning for Tegus Recuitment Process')
+st.title('Example of SEC Screaning for Tegus Recruitment Process')
 st.write('by Fabian Fernandez')
          
 # Creating request Header
@@ -76,6 +76,9 @@ Revenues10Q = Revenues10Q.reset_index(drop=True)
 NetIncomeLoss10Q = NetIncomeLoss[NetIncomeLoss.form == '10-Q']
 NetIncomeLoss10Q = NetIncomeLoss10Q.reset_index(drop=True)
 
+###############################################################################
+# Using StreamLit
+###############################################################################
 
-
-
+x_names = list(companyData["ticker"])
+x_ax = st.sidebar.selectbox("Pick the ticker of the stock to screen, options=x_names)
