@@ -34,7 +34,9 @@ companyData.set_index("ticker", inplace=True)
 
 
 # Look for the CIK of the stock
-cticker = 'AAPL'
+x_names = list(companyData.index)
+x_ax = st.sidebar.selectbox("Pick the ticker of the stock to screen", options=x_names)
+cticker = x_ax
 CIK = companyData['cik_str'][cticker]
 Name_company = companyData['title'][cticker]
 
@@ -94,10 +96,8 @@ NetIncomeLoss10K = NetIncomeLoss10Q.reset_index(drop=True)
 # Using StreamLit
 ###############################################################################
 
-x_names = list(companyData.index)
-ReportForm = ['10-Q','10-K']
 
-x_ax = st.sidebar.selectbox("Pick the ticker of the stock to screen", options=x_names)
+ReportForm = ['10-Q','10-K']
 ReportForm = st.sidebar.radio("Pick a reporting Form", options=ReportForm)
 
 if x_ax != "" and ReportForm != "":
