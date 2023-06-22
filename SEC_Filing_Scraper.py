@@ -36,6 +36,7 @@ companyData.set_index("ticker", inplace=True)
 # Look for the CIK of the stock
 cticker = 'AAPL'
 CIK = companyData['cik_str'][cticker]
+Name_company = companyData['cik_str'][title  ]
 
 ###############################################################################
 # Obtaining General Information of the 10-Q and 10K
@@ -49,9 +50,8 @@ filingMetaData = requests.get(f"https://data.sec.gov/submissions/CIK{CIK}.json"\
 allForms = pd.DataFrame.from_dict(filingMetaData.json()['filings']['recent'])
 
 #Filtering by the list of values of the company
-listForms = ['10-K','10-Q']
-allForms = allForms.loc[allForms['form'].isin(listForms)]
-
+Forms10K = allForms.loc[allForms['form'].isin('10-K')]
+Forms10Q = allForms.loc[allForms['form'].isin('10-Q')]
 
 ###############################################################################
 # Obtaining Company facts data
@@ -98,5 +98,8 @@ ReportForm = ['10-Q','10-K']
 x_ax = st.sidebar.selectbox("Pick the ticker of the stock to screen", options=x_names)
 ReportForm = st.sidebar.radio("Pick a reporting Form", options=ReportForm)
 
+if x_ax != "" and ReportForm != "":
+  st.write('\n The stock choosen is {Name_company} and it has ')
+  
 
 
