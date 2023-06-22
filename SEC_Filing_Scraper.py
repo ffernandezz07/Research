@@ -68,7 +68,6 @@ companyFacts = requests.get(
     headers=headers
     )
 Assets = pd.DataFrame.from_dict(companyFacts.json()['facts']['us-gaap']['Assets']['units']['USD'])
-#Revenues = pd.DataFrame.from_dict(companyFacts.json()['facts']['us-gaap']['Revenues']['units']['USD'])
 NetIncomeLoss = pd.DataFrame.from_dict(companyFacts.json()['facts']['us-gaap']['NetIncomeLoss']['units']['USD'])
 
 
@@ -76,18 +75,12 @@ NetIncomeLoss = pd.DataFrame.from_dict(companyFacts.json()['facts']['us-gaap']['
 Assets10Q = Assets[Assets.form == '10-Q']
 Assets10Q = Assets10Q.reset_index(drop=True)
 
-#Revenues10Q = Revenues[Revenues.form == '10-Q']
-#Revenues10Q = Revenues10Q.reset_index(drop=True)
-
 NetIncomeLoss10Q = NetIncomeLoss[NetIncomeLoss.form == '10-Q']
 NetIncomeLoss10Q = NetIncomeLoss10Q.reset_index(drop=True)
 
 # get assets from 10K forms and reset index
 Assets10K = Assets[Assets.form == '10-K']
 Assets10K = Assets10Q.reset_index(drop=True)
-
-#Revenues10K = Revenues[Revenues.form == '10-K']
-#Revenues10K = Revenues10Q.reset_index(drop=True)
 
 NetIncomeLoss10K = NetIncomeLoss[NetIncomeLoss.form == '10-K']
 NetIncomeLoss10K = NetIncomeLoss10Q.reset_index(drop=True)
@@ -104,9 +97,13 @@ if x_ax != "" and ReportForm != "":
   st.write(f'\n The company choosen is {Name_company} and it has {len10K} 10-K forms and {len10Q} 10-Q forms filled registered in EDGAR')
 
   if ReportForm == "10-K":
-    df = px.Assets10K
+    df = px.Assets10K()
     fig = px.line(df, x='end', y="val")
     fig.show()
+
+
+
+
     
 
 
