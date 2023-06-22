@@ -10,6 +10,7 @@
 import pandas as pd
 import requests
 import streamlit as st
+import matplotlib.pyplot as plt
 
 st.title('Example of SEC Screaning for Tegus Recruitment Process')
 st.write('by Fabian Fernandez')
@@ -103,7 +104,7 @@ if x_ax != "" and ReportForm != "":
   st.write(f'\n The company choosen is {Name_company} and it has {len10K} 10-K forms and {len10Q} 10-Q forms filled registered in EDGAR')
 
 
-st.plotly_chart(x= Assets10K[end], y= Assets10K[val])
+#st.plotly_chart(x= Assets10K[end], y= Assets10K[val])
   
 
 
