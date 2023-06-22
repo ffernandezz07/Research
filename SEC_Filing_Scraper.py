@@ -50,8 +50,8 @@ filingMetaData = requests.get(f"https://data.sec.gov/submissions/CIK{CIK}.json"\
 allForms = pd.DataFrame.from_dict(filingMetaData.json()['filings']['recent'])
 
 #Filtering by the list of values of the company
-Forms10K = allForms.loc[allForms['form'].'10-K']
-Forms10Q = allForms.loc[allForms['form'].'10-Q']
+Forms10K = allForms.loc[allForms['form'],'10-K']
+Forms10Q = allForms.loc[allForms['form'],'10-Q']
         
 
 ###############################################################################
