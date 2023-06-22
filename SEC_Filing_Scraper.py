@@ -13,7 +13,9 @@ import streamlit as st
 
 st.title('Example of SEC Screaning for Tegus Recruitment Process')
 st.write('by Fabian Fernandez')
-         
+st.write('"\n"by Fabian Fernandez')
+
+
 # Creating request Header
 headers = {'User-Agent': "fabian.fernandez@pucp.pe"}
 
