@@ -75,7 +75,6 @@ Revenues10Q = Revenues10Q.reset_index(drop=True)
 NetIncomeLoss10Q = NetIncomeLoss[NetIncomeLoss.form == '10-Q']
 NetIncomeLoss10Q = NetIncomeLoss10Q.reset_index(drop=True)
 
-# plot 
-Assets10Q.plot(x='end', y='val')
+
 
 
