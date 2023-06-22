@@ -101,10 +101,10 @@ df = px.data.stocks()
 fig = px.line(Assets10K, x='end', y="val")
 fig.show()
 
-  if ReportForm == "10-Q":
-    df = px.data.stocks()
-    fig = px.line(Assets10Q, x='end', y="val")
-    fig.show()
+#  if ReportForm == "10-Q":
+#    df = px.data.stocks()
+#    fig = px.line(Assets10Q, x='end', y="val")
+#    fig.show()
 
 
     
