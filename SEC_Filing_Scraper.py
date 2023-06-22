@@ -10,6 +10,8 @@
 import pandas as pd
 import requests
 import streamlit as st
+from plotly.subplots import make_subplots
+from plotly import graph_objects as go
 import plotly.express as px
 
 st.title('Example of SEC Screaning for Tegus Recruitment Process')
