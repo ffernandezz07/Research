@@ -36,7 +36,7 @@ companyData.set_index("ticker", inplace=True)
 # Look for the CIK of the stock
 cticker = 'AAPL'
 CIK = companyData['cik_str'][cticker]
-Name_company = companyData['cik_str'][title  ]
+Name_company = companyData['cik_str']['title']
 
 ###############################################################################
 # Obtaining General Information of the 10-Q and 10K
