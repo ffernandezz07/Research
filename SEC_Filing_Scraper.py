@@ -99,6 +99,7 @@ if x_ax != "" and ReportForm != "":
 
 df = px.data.stocks()
 fig1 = px.line(Assets10K, x='end', y="val", labels={'end':'date','val':'us dollars'},title="Company Assets")
+fig1.update_layout(title_x=0.5)
 st.plotly_chart(fig1, use_container_width=False, sharing="streamlit", theme="streamlit")
 
 
