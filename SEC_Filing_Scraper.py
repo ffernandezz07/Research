@@ -80,5 +80,5 @@ NetIncomeLoss10Q = NetIncomeLoss10Q.reset_index(drop=True)
 # Using StreamLit
 ###############################################################################
 
-x_names = list(companyData["ticker"])
-x_ax = st.sidebar.selectbox("Pick the ticker of the stock to screen, options=x_names)
+x_names = list(companyData.index)
+x_ax = st.sidebar.selectbox("Pick the ticker of the stock to screen", options=x_names)
