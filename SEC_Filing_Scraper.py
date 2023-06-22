@@ -10,6 +10,7 @@
 import pandas as pd
 import requests
 import streamlit as st
+import plotly.express as px
 
 st.title('Example of SEC Screaning for Tegus Recruitment Process')
 st.write('by Fabian Fernandez')
@@ -100,7 +101,7 @@ x_ax = st.sidebar.selectbox("Pick the ticker of the stock to screen", options=x_
 ReportForm = st.sidebar.radio("Pick a reporting Form", options=ReportForm)
 
 if x_ax != "" and ReportForm != "":
-  st.write(f'\n The stock choosen is {Name_company} and it has {len10K} 10-K forms and {len10Q} 10-Q forms filled')
+  st.write(f'\n The company choosen is {Name_company} and it has {len10K} 10-K forms and {len10Q} 10-Q forms filled registered in EDGAR')
   
 
 
