@@ -104,7 +104,7 @@ st.plotly_chart(fig1, use_container_width=False, sharing="streamlit", theme="str
 
 fig2 = px.line(NetIncomeLoss10K, x='end', y="val", labels={'end':'date','val':'us dollars'},title="Company Net Income")
 fig2.update_layout(title_x=0.5)
-st.plotly_chart(fig1, use_container_width=False, sharing="streamlit", theme="streamlit")
+st.plotly_chart(fig2, use_container_width=False, sharing="streamlit", theme="streamlit")
 
 #  if ReportForm == "10-Q":
 #    df = px.data.stocks()
