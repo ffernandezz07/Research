@@ -81,4 +81,8 @@ NetIncomeLoss10Q = NetIncomeLoss10Q.reset_index(drop=True)
 ###############################################################################
 
 x_names = list(companyData.index)
+ReportForm = ['10-Q','10-K']
+
 x_ax = st.sidebar.selectbox("Pick the ticker of the stock to screen", options=x_names)
+ReportForm = st.sidebar.radio("Pick a reporting Form", options=ReportForm)
+
